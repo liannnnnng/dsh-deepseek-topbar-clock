@@ -1,0 +1,6 @@
+# dsh-deepseek-topbar-clock bundle patch: inserts the plugin's host row.
+# The row registers GET /api/deepseek-balance on the DSH web server; the
+# browser half (dsh.client, exports "./client") renders the two header widgets.
+- insert:
+    - id: dsh-deepseek-topbar-clock
+      name: 'dsh-deepseek-topbar-clock'

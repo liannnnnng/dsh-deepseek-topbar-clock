@@ -1,0 +1,45 @@
+{
+  "name": "dsh-deepseek-topbar-clock",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DSH top bar: Beijing-time peak/valley pricing clock + DeepSeek account balance, as a native client plugin (bundle + Host route). · DSH 顶部栏：北京时间峰谷计价时钟 + DeepSeek 账户余额（原生客户端插件）。",
+  "type": "module",
+  "main": "./src/index.mjs",
+  "exports": {
+    ".": "./src/index.mjs",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "client.js",
+    "cordis.patch.yml"
+  ],
+  "scripts": {
+    "check": "node --check src/index.mjs && node --check client.js",
+    "test": "node tools/test-client.mjs && node tools/test-host.mjs",
+    "verify": "node tools/verify.mjs"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "deepseek",
+    "peak-pricing",
+    "balance",
+    "topbar"
+  ],
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "slots"
+      ]
+    }
+  }
+}

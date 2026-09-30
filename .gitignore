@@ -1,0 +1,13 @@
+# 运行产物
+last-verify.log
+*.log
+
+# 本地环境 / 编辑器
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 依赖与缓存
+node_modules/
+.pnpm-store/
